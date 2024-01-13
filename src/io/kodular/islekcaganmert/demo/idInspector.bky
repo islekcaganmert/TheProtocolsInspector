@@ -1,0 +1,532 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="global_declaration" id="qOQqao.gC4874FCx8L}r" x="-630" y="-690">
+    <field name="NAME">apps</field>
+    <value name="VALUE">
+      <block type="lists_create_with" id="i~/+hP{?O`{f7W3pL]L+">
+        <mutation items="0"></mutation>
+      </block>
+    </value>
+  </block>
+  <block type="global_declaration" id="}G._:N(@gx$qLb,$:?h-" x="-630" y="-650">
+    <field name="NAME">creds</field>
+    <value name="VALUE">
+      <block type="dictionaries_create_with" id="5`s/aOv~`shTyQ#~2i+=">
+        <mutation items="0"></mutation>
+      </block>
+    </value>
+  </block>
+  <block type="component_event" id="6Cj-Jo$+s_ZI3r}O`8)J" x="-630" y="-610">
+    <mutation component_type="Form" is_generic="false" instance_name="idInspector" event_name="Initialize"></mutation>
+    <field name="COMPONENT_SELECTOR">idInspector</field>
+    <statement name="DO">
+      <block type="component_set_get" id="+iP^z@z{Z3WC5zH{(@m:">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text" id="1.wh*RWQ:NckLbp#a:K9">
+            <field name="TEXT">https://barsprotocols.pythonanywhere.com/protocols/current_user_info</field>
+          </block>
+        </value>
+        <next>
+          <block type="component_set_get" id=",b_s0iA;H9$d6Na,rgA7">
+            <mutation component_type="Form" set_or_get="set" property_name="NavigationBarLightIcons" is_generic="false" instance_name="idInspector"></mutation>
+            <field name="COMPONENT_SELECTOR">idInspector</field>
+            <field name="PROP">NavigationBarLightIcons</field>
+            <value name="VALUE">
+              <block type="logic_boolean" id="@N2z68:v(jZ^8x:(ryvH">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="0)@;vFSCxG(XL@E_)*{2">
+                <mutation component_type="Form" set_or_get="set" property_name="StatusbarLightIcons" is_generic="false" instance_name="idInspector"></mutation>
+                <field name="COMPONENT_SELECTOR">idInspector</field>
+                <field name="PROP">StatusbarLightIcons</field>
+                <value name="VALUE">
+                  <block type="logic_false" id="+@%J9~HXX;D|jXPdf(P8">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="component_set_get" id="NE!O*n0b-+E`lh@/4nI+">
+                    <mutation component_type="Form" set_or_get="set" property_name="NavigationBarColor" is_generic="false" instance_name="idInspector"></mutation>
+                    <field name="COMPONENT_SELECTOR">idInspector</field>
+                    <field name="PROP">NavigationBarColor</field>
+                    <value name="VALUE">
+                      <block type="component_set_get" id="aYSZ@Z/S)XA|EU!2yHDe">
+                        <mutation component_type="Form" set_or_get="get" property_name="BackgroundColor" is_generic="false" instance_name="idInspector"></mutation>
+                        <field name="COMPONENT_SELECTOR">idInspector</field>
+                        <field name="PROP">BackgroundColor</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="component_method" id="is_v:{v!2NifP@5$fBF(">
+                        <mutation component_type="File" method_name="ReadFrom" is_generic="false" instance_name="File1"></mutation>
+                        <field name="COMPONENT_SELECTOR">File1</field>
+                        <value name="ARG0">
+                          <block type="text" id="{zH5JhRzF!!=DS{V6AQh">
+                            <field name="TEXT">creds.txt</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="@O_61(tn;.u8a;t${bJM" x="-630" y="-410">
+    <mutation component_type="File" is_generic="false" instance_name="File1" event_name="GotText"></mutation>
+    <field name="COMPONENT_SELECTOR">File1</field>
+    <statement name="DO">
+      <block type="lexical_variable_set" id="X/VO!})hT^3nqyb4/jR7">
+        <field name="VAR">global creds</field>
+        <value name="VALUE">
+          <block type="dictionaries_create_with" id="9Y3Yv=OW19_N=J0,|3Bz">
+            <mutation items="3"></mutation>
+            <value name="ADD0">
+              <block type="pair" id=".|~U$Fs}RaSif@AKWPnW">
+                <value name="KEY">
+                  <block type="text" id="H4K!;;c=?`#XWh7:#M0m">
+                    <field name="TEXT">network</field>
+                  </block>
+                </value>
+                <value name="VALUE">
+                  <block type="lists_select_item" id="3[kP+53Xx7n35Gctby]J">
+                    <value name="LIST">
+                      <block type="text_split" id="o^DZdEEAm=K,XC)h[PFL">
+                        <mutation mode="SPLIT"></mutation>
+                        <field name="OP">SPLIT</field>
+                        <value name="TEXT">
+                          <block type="lexical_variable_get" id="b;ErX5Znquc.rIWOM~0d">
+                            <mutation>
+                              <eventparam name="text"></eventparam>
+                            </mutation>
+                            <field name="VAR">text</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="text" id="maDn!qVIjHF6=;9tAD/a">
+                            <field name="TEXT">\n</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="NUM">
+                      <block type="math_number" id=",a^mc(qr6IC!gX5-_dLt">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="pair" id="XWm+Z;U6(R)[9$z(Tie*">
+                <value name="KEY">
+                  <block type="text" id="HV[m@ZpP)y:x@BEg]rVA">
+                    <field name="TEXT">username</field>
+                  </block>
+                </value>
+                <value name="VALUE">
+                  <block type="lists_select_item" id="HS,/:).(Lw@ruItWBBx=">
+                    <value name="LIST">
+                      <block type="text_split" id="{jy{1ParuM)(VCng^}-v">
+                        <mutation mode="SPLIT"></mutation>
+                        <field name="OP">SPLIT</field>
+                        <value name="TEXT">
+                          <block type="lexical_variable_get" id="Cicf)*F[J]pF6^[+L7|s">
+                            <mutation>
+                              <eventparam name="text"></eventparam>
+                            </mutation>
+                            <field name="VAR">text</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="text" id="[yj.%gakCg/6~jeC^RT`">
+                            <field name="TEXT">\n</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="NUM">
+                      <block type="math_number" id="BbL,*AFF[u+)lW]vluf]">
+                        <field name="NUM">2</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="pair" id="]BggUc)u!%$^9/0|im$L">
+                <value name="KEY">
+                  <block type="text" id=";qL7tby7I_Yd2Hzn96S(">
+                    <field name="TEXT">password</field>
+                  </block>
+                </value>
+                <value name="VALUE">
+                  <block type="lists_select_item" id="F/L#I?Jp6(|~wyVTi;3$">
+                    <value name="LIST">
+                      <block type="text_split" id="@aI%sp.Ak9yX8u*]-wx4">
+                        <mutation mode="SPLIT"></mutation>
+                        <field name="OP">SPLIT</field>
+                        <value name="TEXT">
+                          <block type="lexical_variable_get" id=";0dI10PY}W(c+N_{R_ZC">
+                            <mutation>
+                              <eventparam name="text"></eventparam>
+                            </mutation>
+                            <field name="VAR">text</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="text" id="Rt+q{OIR{Jh_ol=1VeU-">
+                            <field name="TEXT">\n</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="NUM">
+                      <block type="math_number" id=":^x?`ZB5K6(%_L2P1]fR">
+                        <field name="NUM">3</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="osh{yvs*RCbTAh-zZKkn">
+            <mutation component_type="Web" method_name="PostText" is_generic="false" instance_name="AAS"></mutation>
+            <field name="COMPONENT_SELECTOR">AAS</field>
+            <value name="ARG0">
+              <block type="component_method" id="b.hV%musD/]?A{dnA.Mn">
+                <mutation component_type="Web" method_name="BuildRequestData" is_generic="false" instance_name="Web1"></mutation>
+                <field name="COMPONENT_SELECTOR">Web1</field>
+                <value name="ARG0">
+                  <block type="dictionaries_create_with" id="d6fJ61qUv9J[{0]wRI0@">
+                    <mutation items="1"></mutation>
+                    <value name="ADD0">
+                      <block type="pair" id="O)#(hm[cuVv;^PRaQ`Y?">
+                        <value name="KEY">
+                          <block type="text" id="a$Yl(Jj)oSaRXmd*EtPD">
+                            <field name="TEXT">domain</field>
+                          </block>
+                        </value>
+                        <value name="VALUE">
+                          <block type="dictionaries_lookup" id="El5*$}2Z~.t-iG8vjT$O">
+                            <value name="KEY">
+                              <block type="text" id=":-RnKG1*.%_`@Iiiqn-B">
+                                <field name="TEXT">network</field>
+                              </block>
+                            </value>
+                            <value name="DICT">
+                              <block type="lexical_variable_get" id="QzFXj)+[k=[53-?]Q$SI">
+                                <field name="VAR">global creds</field>
+                              </block>
+                            </value>
+                            <value name="NOTFOUND">
+                              <block type="text" id="qYpUa79%m`h_jNDg$|Nq">
+                                <field name="TEXT">not found</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="%)h$2Tj#S`xLzh~]:wB@" x="-630" y="70">
+    <mutation component_type="Web" is_generic="false" instance_name="AAS" event_name="GotText"></mutation>
+    <field name="COMPONENT_SELECTOR">AAS</field>
+    <statement name="DO">
+      <block type="component_set_get" id="0t5%J8HqEkPdeER51[)^">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="controls_choose" id="0G{kMgb:wi2M|.}_#WCc">
+            <value name="TEST">
+              <block type="logic_compare" id="lcOQI}E;z_J0{UXb:e4l">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="lexical_variable_get" id="o@/V$WV{_**ODy`S+F)[">
+                    <mutation>
+                      <eventparam name="responseCode"></eventparam>
+                    </mutation>
+                    <field name="VAR">responseCode</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="VBGv1V`x/NRBD?X5}o{Q">
+                    <field name="NUM">200</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="THENRETURN">
+              <block type="text_join" id="m-,?4|w)sen/*3~nAk[P">
+                <mutation items="3"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="),Y~sdxS[g@Rmi%}ea8F">
+                    <field name="TEXT">https://</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="lexical_variable_get" id="R3)A|xL[[^#]m2R(MT,r">
+                    <mutation>
+                      <eventparam name="responseContent"></eventparam>
+                    </mutation>
+                    <field name="VAR">responseContent</field>
+                  </block>
+                </value>
+                <value name="ADD2">
+                  <block type="text" id="bORwD28m{QQ8Z?-^:z:y">
+                    <field name="TEXT">/protocols/current_user_info</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="ELSERETURN">
+              <block type="dictionaries_lookup" id="pK$B!fa-7Y/!Bh2ikMOH">
+                <value name="KEY">
+                  <block type="text" id="G0)/-3FW@Xg01gd!g`V~">
+                    <field name="TEXT">network</field>
+                  </block>
+                </value>
+                <value name="DICT">
+                  <block type="lexical_variable_get" id="3OZ1@[-7utAz;,FJk[%B">
+                    <field name="VAR">global creds</field>
+                  </block>
+                </value>
+                <value name="NOTFOUND">
+                  <block type="text" id="1X{)_=.cfMo^RWZ-To$A">
+                    <field name="TEXT">not found</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="Ui88RlYUn-9B7N,R0C}w">
+            <mutation component_type="Web" method_name="PostText" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+            <value name="ARG0">
+              <block type="component_method" id="^]zP5hca0WT+Rdo+D0e.">
+                <mutation component_type="Web" method_name="BuildRequestData" is_generic="false" instance_name="Web1"></mutation>
+                <field name="COMPONENT_SELECTOR">Web1</field>
+                <value name="ARG0">
+                  <block type="dictionaries_create_with" id="w:CSahF4z-!E5#o*$65a">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="pair" id="P/CT^f:wvWY0byaiCYKy">
+                        <value name="KEY">
+                          <block type="text" id="%@,~}LQ$TPhIi-|[7jW[">
+                            <field name="TEXT">current_user_username</field>
+                          </block>
+                        </value>
+                        <value name="VALUE">
+                          <block type="dictionaries_lookup" id="uD?1(9_?EXs5M*l||Wu:">
+                            <value name="KEY">
+                              <block type="text" id="AK3wW0Y-wFtn]vw4^DrD">
+                                <field name="TEXT">username</field>
+                              </block>
+                            </value>
+                            <value name="DICT">
+                              <block type="lexical_variable_get" id="L[|ZP[U9Msh70$:/^SS8">
+                                <field name="VAR">global creds</field>
+                              </block>
+                            </value>
+                            <value name="NOTFOUND">
+                              <block type="text" id=")VDjQ|_sK)1:Nn,vz5!s">
+                                <field name="TEXT">not found</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="pair" id="7i*DjjgG=~c]*M+ZwoG5">
+                        <value name="KEY">
+                          <block type="text" id="X[;vD{(R}3#@_:7uxlMK">
+                            <field name="TEXT">current_user_password</field>
+                          </block>
+                        </value>
+                        <value name="VALUE">
+                          <block type="dictionaries_lookup" id="~rKHf(Q,ns|s.X3~tjhS">
+                            <value name="KEY">
+                              <block type="text" id="h(:5=bp?J=D80Lym22n9">
+                                <field name="TEXT">password</field>
+                              </block>
+                            </value>
+                            <value name="DICT">
+                              <block type="lexical_variable_get" id="YlDuN,~1Ss@#bz|_S%ua">
+                                <field name="VAR">global creds</field>
+                              </block>
+                            </value>
+                            <value name="NOTFOUND">
+                              <block type="text" id="!5.!NAV-7AMC|.@MkV1,">
+                                <field name="TEXT">not found</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="PrS12Gf@2#Lr^Ay.SSk0" x="-630" y="570">
+    <mutation component_type="Web" is_generic="false" instance_name="Web1" event_name="GotText"></mutation>
+    <field name="COMPONENT_SELECTOR">Web1</field>
+    <statement name="DO">
+      <block type="component_set_get" id="Xe[MeRnPA}NMi=0Vk!v4">
+        <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="Label2"></mutation>
+        <field name="COMPONENT_SELECTOR">Label2</field>
+        <field name="PROP">Text</field>
+        <value name="VALUE">
+          <block type="text_join" id="Ro;foc*hU$|[UhoWR6!Z">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text" id="RfAvh_HknMz/7efgZv7A">
+                <field name="TEXT">Signed in as </field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="dictionaries_lookup" id="O7jOpkf@ATwu6.wEi9Uk">
+                <value name="KEY">
+                  <block type="text" id="y=l|C=hMT]:F,=I7}AHQ">
+                    <field name="TEXT">name</field>
+                  </block>
+                </value>
+                <value name="DICT">
+                  <block type="dictionaries_alist_to_dict" id="kq3EYS:MPsN=s@kI4lsB">
+                    <value name="PAIRS">
+                      <block type="component_method" id="Buei=5!s-QW~Tn4w3|rc">
+                        <mutation component_type="Web" method_name="JsonTextDecode" is_generic="false" instance_name="Web1"></mutation>
+                        <field name="COMPONENT_SELECTOR">Web1</field>
+                        <value name="ARG0">
+                          <block type="lexical_variable_get" id="DMXq;4b3;6F%,ZM}+U(=">
+                            <mutation>
+                              <eventparam name="responseContent"></eventparam>
+                            </mutation>
+                            <field name="VAR">responseContent</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="NOTFOUND">
+                  <block type="text" id="~=1dDSMwS^{wUq[A-[N*">
+                    <field name="TEXT">not found</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="text" id="LtAJTx|5JO2LO7u5nK/|">
+                <field name="TEXT"> </field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="dictionaries_lookup" id="OHul-Xbd9Mk*HXJ]3fY`">
+                <value name="KEY">
+                  <block type="text" id="}bN43tc;2QKy~*.)kK?:">
+                    <field name="TEXT">surname</field>
+                  </block>
+                </value>
+                <value name="DICT">
+                  <block type="dictionaries_alist_to_dict" id="!+vX:GJwSTR{J_n;JWL_">
+                    <value name="PAIRS">
+                      <block type="component_method" id="a?TMA3Xv$T]7}CEsv;jj">
+                        <mutation component_type="Web" method_name="JsonTextDecode" is_generic="false" instance_name="Web1"></mutation>
+                        <field name="COMPONENT_SELECTOR">Web1</field>
+                        <value name="ARG0">
+                          <block type="lexical_variable_get" id="k[Ua?`VxVHB48v09%y,b">
+                            <mutation>
+                              <eventparam name="responseContent"></eventparam>
+                            </mutation>
+                            <field name="VAR">responseContent</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="NOTFOUND">
+                  <block type="text" id="2$pkJ1;Rm=Z/.Kri06=4">
+                    <field name="TEXT">not found</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_set_get" id="3H4ZLW!j:~u`|2t0z:B1">
+            <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="Label5"></mutation>
+            <field name="COMPONENT_SELECTOR">Label5</field>
+            <field name="PROP">Text</field>
+            <value name="VALUE">
+              <block type="lexical_variable_get" id="}:ufZlan]H-NOThAq1L*">
+                <mutation>
+                  <eventparam name="responseContent"></eventparam>
+                </mutation>
+                <field name="VAR">responseContent</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="|5Df5@4q8v+3+KzxUxFJ">
+                <mutation component_type="MakeroidLinearProgressbar" set_or_get="set" property_name="Visible" is_generic="false" instance_name="Linear_Progressbar1"></mutation>
+                <field name="COMPONENT_SELECTOR">Linear_Progressbar1</field>
+                <field name="PROP">Visible</field>
+                <value name="VALUE">
+                  <block type="logic_false" id="J(_N2}LzKpI,UWNDSj5|">
+                    <field name="BOOL">FALSE</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="elOQT^`QR;Fc5`Dy/(4W" x="-630" y="950">
+    <mutation component_type="Form" is_generic="false" instance_name="idInspector" event_name="BackPressed"></mutation>
+    <field name="COMPONENT_SELECTOR">idInspector</field>
+    <statement name="DO">
+      <block type="controls_openAnotherScreen" id="YD:dqUUGU!z~c#DdfJms">
+        <value name="SCREEN">
+          <block type="helpers_screen_names" id="^b1-aJ1K5Suc[;wMOk~(">
+            <field name="SCREEN">SelectProcess</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="242" language-version="34"></yacodeblocks>
+</xml>
